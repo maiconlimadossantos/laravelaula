@@ -6,8 +6,8 @@ namespace App\Http\Controllers;
 
 class ProfessorController extends Controller
 {
-    public function index()
+    public function professorindex()
     {
-        return view('professores');
+        return view('professor');
     }
 }
