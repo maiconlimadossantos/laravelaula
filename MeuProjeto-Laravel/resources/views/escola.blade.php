@@ -29,6 +29,63 @@
             </ul>
         </nav>
     </header>
+    <main class="container">
+        <h2>Cadastrar Unidade Escolar</h2>
+
+        <form action="{{ route('escolastore') }}" method="POST">
+            @csrf
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label for="nome">Nome da Instituição</label>
+                    <input type="text" name="nome" id="nome" placeholder="Ex: Escola Técnica Estadual" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" name="cnpj" id="cnpj" placeholder="00.000.000/0000-00">
+                </div>
+
+                <div class="form-group">
+                    <label for="diretor">Nome do Diretor</label>
+                    <input type="text" name="diretor" id="diretor">
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="endereco">Endereço Completo</label>
+                    <input type="text" name="endereco" id="endereco">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone para Contato</label>
+                    <input type="text" name="telefone" id="telefone">
+                </div>
+            </div>
+            <button type="submit">Salvar Escola</button>
+        </form>
+
+        <hr>
+
+        <h2>Escolas Cadastradas</h2>
+        <p><small>Exemplo de <strong>interação com URL</strong> (Requisito do projeto):</small></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Escola Central</td>
+                    <td>Camaquã</td>
+                    <td>
+                        <a href="/escola/editar/1" class="btn-edit">Editar ID: 1</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
 </body>
 </html>
