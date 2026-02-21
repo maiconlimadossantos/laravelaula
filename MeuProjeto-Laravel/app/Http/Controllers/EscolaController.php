@@ -14,15 +14,13 @@ class EscolaController extends Controller
     {
         return view('escola');
     }
-    public function store_escola()
+    public function escolastore()
     {
-        // Lógica para armazenar os dados da escola
-        // Você pode usar um modelo Eloquent para salvar os dados no banco de dados
-        // Exemplo:
-        // $escola = new Escola();
-        // $escola->nome = request('nome');
-        // $escola->endereco = request('endereco');
-        // $escola->save();
+        request()->validate([
+            'nome' => 'required',
+            'endereco' => 'required',
+            'telefone' => 'required',
+        ]);
 
         return redirect()->route('escola.index')->with('success', 'Escola criada com sucesso!');
     }
