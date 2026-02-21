@@ -1,17 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\EscolaController;
+use App\Http\Controllers\ProfessorController;
+use App\Http\Controllers\TurmaController;
+use App\Http\Controllers\CursoController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/alunos', [App\Http\Controllers\AlunoController::class, 'index'
-]);
-Route::get('/escola', [App\Http\Controllers\EscolaController::class, 'index'
-]);
-Route::get('/professores', [App\Http\Controllers\ProfessorController::class, 'index'
-]);
-Route::get('/turmas', [App\Http\Controllers\TurmaController::class, 'index'
-]);
-Route::get('/cursos', [App\Http\Controllers\CursoController::class, 'index'
-]);
+Route::get('/','App\Http\Controllers\escolaController@escolaindex')->name('escolaindex');
+//aluno//
+Route::get('/aluno','App\Http\Controllers\alunoController@alunoindex')->name('alunoindex');
+Route::get('/aluno/create','App\Http\Controllers\alunoController@create_aluno')->name('create_aluno');
+Route::post('/aluno/store','App\Http\Controllers\alunoController@alunostore')->name('alunostore');
+//professor//
+Route::get('/professor','App\Http\Controllers\professorController@professorindex')->name('professorindex');
+Route::get('/turma','App\Http\Controllers\turmaController@turmaindex')->name('turmaindex');
+Route::get('/curso','App\Http\Controllers\cursoController@cursoindex')->name('cursoindex');

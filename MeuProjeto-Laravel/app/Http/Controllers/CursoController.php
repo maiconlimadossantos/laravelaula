@@ -10,4 +10,6 @@ class CursoController extends Controller
     {
         return view('curso');
     }
+
+
 }
