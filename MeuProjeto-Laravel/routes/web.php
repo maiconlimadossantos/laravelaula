@@ -11,7 +11,10 @@ use App\Http\Controllers\CursoController;
 Route::get('/', function () {
     return view('welcome');
 });
+//escola//
 Route::get('/','App\Http\Controllers\escolaController@escolaindex')->name('escolaindex');
+Route::get('/escola/create','App\Http\Controllers\escolaController@create_escola')->name('create_escola');
+Route::post('/escola/store','App\Http\Controllers\escolaController@escolastore')->name('escolastore');
 //aluno//
 Route::get('/aluno','App\Http\Controllers\alunoController@alunoindex')->name('alunoindex');
 Route::get('/aluno/create','App\Http\Controllers\alunoController@create_aluno')->name('create_aluno');
