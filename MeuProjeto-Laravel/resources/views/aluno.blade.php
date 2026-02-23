@@ -38,15 +38,15 @@
         @csrf
         <div>
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome" pattern="[A-Za-zÀ-ÿ\s]+" title="O nome deve conter apenas letras e espaços" required>
         </div>
         <div>
         <label for="sobrenome">Sobrenome</label>
-        <input type="text" name="sobrenome" id="sobrenome">
+        <input type="text" name="sobrenome" id="sobrenome" pattern="[A-Za-zÀ-ÿ\s]+" title="O sobrenome deve conter apenas letras e espaços" required>
         </div>
         <div>
         <label for="idade">Idade:</label>
-        <input type="number" name="idade" id="idade">
+        <input type="number" name="idade" id="idade" min="1" max="120" required>
         </div>
         <div>
         <label for="data">Data de Nascimento</label>
@@ -54,19 +54,19 @@
         </div>
         <div>
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" id="cpf">
+            <input type="number" name="cpf" id="cpf" pattern="\d{3}.\d{3}.\d{3}-\d{2}" title="Formato esperado: 000.000.000-00" placeholder="000.000.000-00">
         </div>
         <div>
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" placeholder="exemplo@escola.com">
         </div>
         <div>
             <label for="telefone">Telefone:</label>
-            <input type="number" name="telefone" id="telefone">
+            <input type="number" name="telefone" id="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" title="Formato esperado: (00) 99999-9999" placeholder="(00) 00000-0000">
         </div>
         <div>
             <label for="matricula">Matricula:</label>
-            <input type="number" name="matricula" id="matricula">
+            <input type="number" name="matricula" id="matricula" pattern="\d+" title="A matrícula deve conter apenas números." placeholder="123456" required>
         </div>
         <button type="submit">Salvar Aluno</button>
     </form>
