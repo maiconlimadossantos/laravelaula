@@ -47,7 +47,7 @@
 
                 <div class="form-group">
                     <label for="diretor">Nome do Diretor</label>
-                    <input type="text" name="diretor" id="diretor">
+                    <input type="text" name="diretor" id="diretor" >
                 </div>
 
                 <div class="form-group full-width">
